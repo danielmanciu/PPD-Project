@@ -1,9 +1,7 @@
 # ignore resulted image
-processed-image.ppm
-
-# TODO ignore resulted image
 image.ppm
 processed-image.ppm
+
 ### Java template
 # Compiled class file
 *.class
