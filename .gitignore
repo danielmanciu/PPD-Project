@@ -1,6 +1,7 @@
 # ignore resulted image
 image.ppm
 processed-image.ppm
+processed-image-small.ppm
 
 ### Java template
 # Compiled class file
