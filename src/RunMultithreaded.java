@@ -1,13 +1,11 @@
 import com.google.common.base.Stopwatch;
-import pixel.Rgb;
-import ppm.PpmFile;
 
 import java.io.File;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-public class Main {
+public class RunMultithreaded {
     private static final String PPM_FILE_PATH = System.getProperty("user.dir") + File.separator + "image.ppm";
     private static final String NEW_PPM_FILE_PATH = System.getProperty("user.dir") + File.separator + "processed-image.ppm";
 
@@ -18,11 +16,11 @@ public class Main {
         int maximumValue = ppmFile.getMaximumValue();
         Rgb[][] pixels = ppmFile.getRgbPixels();
 
-        for (int row = 0; row < height; row++) {
-            final int i = row;
+        for (int col = 0; col < height; col++) {
+            final int i = col;
             executor.submit(() -> {
-                for (int j = 0; j < width; j++) {
-                    pixels[i][j].applySepia();
+                for (int row = 0; row < width; row++) {
+                    pixels[i][row].applySepia();
                 }
             });
         }
